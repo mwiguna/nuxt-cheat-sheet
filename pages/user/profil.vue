@@ -1,9 +1,11 @@
 <template>
     <div>
-        Count : {{ count }}
-        <button @click="addCount">Count</button>
+        <div>
+            Count : {{ count }}
+            <button @click="addCount">Count</button>
 
-        <div>Profil : {{ token }}</div>
+            <div>Profil : {{ token }}</div>
+        </div>
     </div>
 </template>
 
@@ -20,8 +22,6 @@
     }
     
     // Token
-    let token = ref('')
-    if(process.client){
-        token.value = localStorage.getItem('token')
-    }
+    const token = useCookie('token').value
+    if(!token) await navigateTo('/')
 </script>

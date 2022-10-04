@@ -11,10 +11,10 @@
                 <NuxtLink to="/blog/1/2">Multi Param</NuxtLink>
             </li>
             <li>
-                <NuxtLink to="/user" >User</NuxtLink>
+                <NuxtLink to="/user">User</NuxtLink>
             </li>
             <li @click="login">
-                Login
+                <NuxtLink to="/user/profil">Profil</NuxtLink>
             </li>
         </ul>
     </div>
@@ -22,8 +22,8 @@
 
 <script setup>
     const login = async () => {
-        localStorage.setItem('token', 'abc123')
-        await navigateTo('/user/profil')
+        const token = useCookie('token')
+        token.value = "abc123"
     }
 </script>
   

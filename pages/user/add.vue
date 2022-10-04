@@ -14,6 +14,7 @@
     async function submit(){
         let formData = new FormData();
         formData.append('name', name.value);
+        formData.append('token', localStorage.getItem('token'));
 
         const response = await $fetch('https://wiguna.cendikiawandigital.com/apitest/ranker/user/postData', {
             method: 'POST',
