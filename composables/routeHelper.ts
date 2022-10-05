@@ -1,9 +1,9 @@
 export default function () {
-    let baseUrl = 'https://wiguna.cendikiawandigital.com/apitest/ranker/'
+    let baseUrl = 'https://wigunago.cendikiawandigital.com/'
     // baseUrl = 'http://localhost/project/apitest/ranker/'
     
     return {
-        "usersUrl": baseUrl + "user/getUsers",
-        "singleUserUrl": "bcd" 
+        "usersUrl": baseUrl + "getUsers",
+        "singleUserUrl": "getSingle" 
     }
 }
